@@ -15,4 +15,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
-          env: ORG_GID=${{ secrets.ORG_GID }},STORAGE_VALUE=${{ secrets.STORAGE_VALUE }},STORAGE_ARRAY=${{ secrets.STORAGE_ARRAY }},MEALS_USER_ACCOUNT=${{ secrets.MEALS_USER_ACCOUNT }},MEALS_PASS_WORD=${{ secrets.MEALS_PASS_WORD }}
+          env: ORG_GID=${{ secrets.ORG_GID }},STORAGE_VALUE=${{ secrets.STORAGE_VALUE }},STORAGE_ARRAY=${{ secrets.STORAGE_ARRAY }},ZCC_PASS_WORD=${{ secrets.ZCC_PASS_WORD }},ZWP_PASS_WORD=${{ secrets.ZWP_PASS_WORD }}
