@@ -1,7 +1,8 @@
 let userAccountStr = Cypress.env("MEALS_USER_ACCOUNT");
 let passwordStr = Cypress.env("MEALS_PASS_WORD");
-console.log(userAccountStr)
-console.log(passwordStr)
+
+userAccountStr = userAccountStr + '';
+passwordStr = passwordStr + '';
 let userAccount_array = userAccountStr.split(',');
 let password_array = passwordStr.split(',');
 
