@@ -38,7 +38,6 @@ userAccount_array.forEach((item, index) => {
       cy.get('.entry-top-right').click();
       cy.get('.bottom_button').click();
       cy.get('uni-button[type="primary"]').click();
-      cy.get('.uni-toast__content').should('contain.text', '提交成功');
     });
   });
 });
