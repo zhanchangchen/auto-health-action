@@ -36,7 +36,7 @@ userAccount_array.forEach((item, index) => {
       let url = origin_url + '?accessToken=' + accessToken;
       cy.visit(url);
       cy.get('.entry-top-right').click();
-      cy.get('.bottom_button').click();
+      cy.get('.checkLabel').click();
       cy.get('uni-button[type="primary"]').click();
     });
   });
