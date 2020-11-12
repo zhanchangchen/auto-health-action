@@ -6,23 +6,30 @@ let zccUserAccount = '04281739551a4a21b497fccc38a59d15a4923427f176aa34545dfae05d
 let zwpUserAccount = '04ba024b471d006ca514a00fbaa70c3b74cac10d79a1d0c20ffedee6d8a32778fa5c40bfc0c8e14cdb12cca64af62e2396b15d4f1e466f5319e456304fa4d652f5e92236803d9e3fb9cc3c38d277cbf7593e02270521331274d1079050b7a76daadf6158cb58ac8f69d40c9f93c06ccdc92f479a94a58d';
 
 describe('auto_report_meal_zcc', () => {
-    let accessToken = '';
-    it('login yg-home', () => {
-      cy.request({
-        url:
-          'https://ygjy.ismartwork.cn/ecs/mapp/restful/auth/backstageLoginValidate',
-        method: 'POST',
-        form: false, // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers
-        headers: {},
-        body: {
-          userAccount: zccUserAccount,
-          password: zccPasswordStr
-        }
-      }).then(resp => {
-        expect(resp.status).to.eq(200);
-        accessToken = resp.body.body.ecpToken || '';
-      });
+      let accessToken = '';
+  let body = '';
+  it('login yg-home', () => {
+    cy.request({
+      url:
+        'https://ygjy.ismartwork.cn/ecs/mapp/restful/auth/backstageLoginValidate',
+      method: 'POST',
+      form: false, // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers
+      headers: {},
+      body: {
+        userAccount: zccUserAccount,
+        password: zccPasswordStr
+      }
+    }).then(resp => {
+      expect(resp.status).to.eq(200);
+      body = resp.body.body;
+      accessToken = resp.body.body.ecpToken || '';
     });
+  });
+
+  it(body, () => {
+    console.log(body);
+    console.log(accessToken);
+  });
 
     it('jump to passpark and submit', () => {
       const origin_url =
