@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-
+        
       - name: Cypress run 执行脚本
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v1.16.1
         with:
           env: ORG_GID=${{ secrets.ORG_GID }},STORAGE_VALUE=${{ secrets.STORAGE_VALUE }},STORAGE_ARRAY=${{ secrets.STORAGE_ARRAY }}
