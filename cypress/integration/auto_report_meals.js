@@ -33,6 +33,7 @@ describe('auto_report_meal_zcc', () => {
       'https://ygjy.ismartwork.cn/ecs/mapp/passpark/h5/index.html#/src/dinner/dinnerStatic';
     let url = origin_url + '?accessToken=' + accessToken;
     cy.visit(url);
+    cy.get('.borderGray').click();
     cy.get('.checkLabel').click();
     cy.get('uni-button[type="primary"]').click();
   });
@@ -63,6 +64,7 @@ describe('auto_report_meal_zwp', () => {
     let url = origin_url + '?accessToken=' + accessToken;
     console.log(url);
     cy.visit(url);
+    cy.get('.borderGray').click();
     cy.get('.checkLabel').click();
     cy.get('uni-button[type="primary"]').click();
   });
