@@ -13,4 +13,5 @@ jobs:
         uses: actions/checkout@v1
         
       - name: Cypress run 执行脚本
-        uses: cypress-io/github-action@v1.16.1
+        uses: cypress-io/github-action@v2
+
